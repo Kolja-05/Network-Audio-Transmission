@@ -29,6 +29,6 @@ impl Network {
 
         let bytes = packet.to_bytes();
         self.socket.send_to(&bytes, &self.target_addr).ok();
+        self.seq = self.seq.wrapping_add(1);
     }
-
 }
