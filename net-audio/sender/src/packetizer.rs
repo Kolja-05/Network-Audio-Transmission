@@ -5,7 +5,7 @@ use common::AudioPacket;
 
 
 
-pub fn run (mut consumer: HeapCons<f32>, packet_size: usize) -> AudioPacket {
+pub fn run(consumer: &mut HeapCons<f32>, packet_size: usize) -> AudioPacket {
     let mut buf = vec![0.0f32; packet_size];
 
     loop {
